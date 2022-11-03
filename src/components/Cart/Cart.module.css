@@ -1,0 +1,25 @@
+.cart-position {
+  position: absolute;
+  top: 60px;
+  right: 5px;
+}
+
+.cart-details {
+  margin-right: 15px;
+  margin-top: 15px;
+  font-size: large;
+  font-weight: bold;
+}
+.cart-header * {
+  display: inline-block;
+  font-size: large;
+  padding: 0 25px;
+  border-bottom: 1px solid black;
+}
+
+.cart-purchase {
+  display: flex;
+  justify-content: end;
+  margin-top: 15px;
+  z-index: -1;
+}
