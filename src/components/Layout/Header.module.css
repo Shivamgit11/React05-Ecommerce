@@ -3,3 +3,15 @@
   padding: 50px;
   color: white;
 }
+
+.btn-1 {
+  background-color: white;
+  width: 100px;
+  border: 2px solid skyblue;
+  margin-left: 50px;
+}
+
+a.active {
+  color: white; 
+  border: 1px solid cadetblue;  
+}

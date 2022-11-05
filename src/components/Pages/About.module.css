@@ -1,0 +1,25 @@
+.img1 {
+  border-radius: 100%;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  float: left;
+  margin-right: 20px;
+  margin-left: 5rem;
+}
+
+.h1 {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.div {
+    margin-left: 10rem;
+}
+
+.active {
+    color: white;
+}

@@ -7,11 +7,12 @@ import Item from "./Item";
 
 const CartItem = (props) => {
   const ctxStore = useContext(CartContext);
-
+  
   const cartProduct = ctxStore.items.map((product) => {
     return (
       <div className="col col=12" key={product.id}>
         <Item title={product.title} id={product.id} imageUrl={product.imageUrl} price={product.price} quantity={product.quantity} />
+        
       </div>
     );
   });
