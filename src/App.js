@@ -9,6 +9,7 @@ import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 import ABOUT from "./components/Pages/About";
 import HOME from "./components/Pages/Home";
+import Contact from "./components/Pages/Contact";
 function App() {
   const [cartState, setCartState] = useState(false);
 
@@ -28,6 +29,9 @@ function App() {
       </Route>
       <Route path="/home">
           <HOME />
+      </Route>
+      <Route path="/contact">
+          <Contact />
       </Route>
       </main>
       <Route path="/store">

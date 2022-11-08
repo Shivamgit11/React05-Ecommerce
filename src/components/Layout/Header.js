@@ -19,6 +19,9 @@ const Header = (props) => {
             <li className="nav-item pe-5 ps-5">
               <NavLink activeClassName={classes.active} to="/about">About</NavLink>
             </li>
+            <li className="nav-item pe-5 ps-5">
+              <NavLink activeClassName={classes.active} to="/contact">contact</NavLink>
+            </li>
           </ul>
         </div>
         <Button className={`${classes["btn-1"]} "btn btn-dark end-0 pe-3"`}  onClick={props.onClick}>
