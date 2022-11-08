@@ -33,6 +33,7 @@
 // export default Contact;
 
 import React, { Fragment, useRef } from "react";
+import classes from './Contact.module.css';
 
 const Contact = (props) => {
   const usernameRef = useRef("");
@@ -63,8 +64,8 @@ const Contact = (props) => {
 
   return (
     <Fragment>
-      <h1>Appointment Booking App</h1>
-      <form onSubmit={submitHandler}>
+      <h1 className={classes.h1}>Connect with us</h1>
+      <form onSubmit={submitHandler} className={classes.section1}>
         <label> Name</label>
         <input
           id="username"
