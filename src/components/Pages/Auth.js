@@ -26,16 +26,17 @@ const AuthForm = () => {
 
     // optional : ADD validation
     setIsLoading(true);
-    let url;
-    if (isLogin) {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAjJlzI2kGfu7ar--fUPqz6qc6HBTohExs";
-    } else {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAjJlzI2kGfu7ar--fUPqz6qc6HBTohExs";
-      // console.log(enteredEmail);
-    }
-    fetch(url, {
+    // let url;
+    // if (isLogin) {
+    //   url =
+        
+    // } else {
+    //   url =
+    //     "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAjJlzI2kGfu7ar--fUPqz6qc6HBTohExs";
+    //   // console.log(enteredEmail);
+    // }
+    
+    fetch("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAjJlzI2kGfu7ar--fUPqz6qc6HBTohExs", {
       method: "POST",
       body: JSON.stringify({
         email: enteredEmail,
@@ -64,6 +65,7 @@ const AuthForm = () => {
       })
       .then((data) => {
         authCtx.login(data.idToken);
+        console.log(data.idToken);
         history.replace("/");
       })
       .catch((err) => {

@@ -5,13 +5,16 @@ import { BrowserRouter } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 import App from "./App";
+import { AuthContextProvider } from "./store/auth-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
+  <AuthContextProvider>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </AuthContextProvider>
   </BrowserRouter>
 );
 

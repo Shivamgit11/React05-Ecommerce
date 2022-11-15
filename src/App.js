@@ -10,12 +10,14 @@ import CartProvider from "./store/CartProvider";
 import ABOUT from "./components/Pages/About";
 import HOME from "./components/Pages/Home";
 import Contact from "./components/Pages/Contact";
+import ProductDetails from "./components/Store/StoreProductDetails";
 import LOGIN from "./components/Pages/Auth";
 import AuthContext from "./store/auth-context";
 
 function App() {
   const [cartState, setCartState] = useState(false);
   const authCtx = useContext(AuthContext);
+  const isLogin = authCtx.isLoggedIn;
 
   const onClickCartHandler = () => {
     setCartState((prevState) => {
@@ -42,19 +44,24 @@ function App() {
         <Route path="/contact">
           <Contact />
         </Route>
+        
       </main>
       <Route path="/store">
-        <main>
+      {isLogin && <main>
           {cartState && <Cart onClick={onClickCartHandler} />}
           {console.log("dsjjsjgj")};
           <Store />
-        </main>
+        </main>}
+        {!isLogin && <Redirect to="/login" />}
       </Route>
-      <Route path="/store">
-        {!authCtx.isLoggedIn && <Store />}
+      <Route path="/product-details">
+          <ProductDetails />
+        </Route>
+      {/* <Route path="/store">
+        {authCtx.isLoggedIn && <Store />}
 
-        {authCtx.isLoggedIn && <Redirect to="/login" />}
-      </Route>
+        {!authCtx.isLoggedIn && <Redirect to="/login" />}
+      </Route> */}
 
       <Footer />
     </CartProvider>

@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Store.module.css";
 import Card from "./Card";
 import Cart from "../Cart/Cart";
+import { Link } from "react-router-dom";
 
 const productsArr = [
   {
@@ -45,7 +46,22 @@ const Store = () => {
   const card = productsArr.map((product) => {
     return (
       <div className="col col-6">
-        <Card title={product.title} price={product.price} imageUrl={product.imageUrl} key={product.id} id={product.id} />
+        <Link to={{ pathname: "/product-details", state: product }}>
+          <Card
+            title={product.title}
+            price={product.price}
+            imageUrl={product.imageUrl}
+            key={product.id}
+            id={product.id}
+          />
+        </Link>
+        {/* <Card
+          title={product.title}
+          price={product.price}
+          imageUrl={product.imageUrl}
+          key={product.id}
+          id={product.id}
+        /> */}
       </div>
     );
   });
