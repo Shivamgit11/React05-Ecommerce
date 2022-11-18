@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./Store.module.css";
 import Card from "./Card";
-import Cart from "../Cart/Cart";
-import { Link } from "react-router-dom";
+// import Cart from "../Cart/Cart";
+// import { Link } from "react-router-dom";
 
 const productsArr = [
   {
@@ -46,7 +46,7 @@ const Store = () => {
   const card = productsArr.map((product) => {
     return (
       <div className="col col-6">
-        <Link to={{ pathname: "/product-details", state: product }}>
+        {/* <Link to={{ pathname: "/product-details", state: product }}> */}
           <Card
             title={product.title}
             price={product.price}
@@ -54,7 +54,7 @@ const Store = () => {
             key={product.id}
             id={product.id}
           />
-        </Link>
+        {/* </Link> */}
         {/* <Card
           title={product.title}
           price={product.price}

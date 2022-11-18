@@ -11,6 +11,7 @@ import ABOUT from "./components/Pages/About";
 import HOME from "./components/Pages/Home";
 import Contact from "./components/Pages/Contact";
 import ProductDetails from "./components/Store/StoreProductDetails";
+import LOGGEDIN from "./components/Pages/logeedin";
 import LOGIN from "./components/Pages/Auth";
 import AuthContext from "./store/auth-context";
 
@@ -35,6 +36,11 @@ function App() {
         {!authCtx.isLoggedIn && (
           <Route path="/login">
             <LOGIN />
+          </Route>
+        )}
+        {authCtx.isLoggedIn && (
+          <Route path="/login">
+            <LOGGEDIN />
           </Route>
         )}
 

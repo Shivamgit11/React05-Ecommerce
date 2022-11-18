@@ -1,4 +1,5 @@
-import React, { useRef, useContext } from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import CartContext from "../../store/cart-context";
 const Card = (props) => {
   const crtStore = useContext(CartContext);
@@ -18,7 +19,12 @@ const Card = (props) => {
   return (
     <div className="card" style={{ width: "18rem" }}>
       <h3 className="text-center">{props.title}</h3>
-      <img src={`${props.imageUrl}`} className="card-img-top" alt="..." />
+      <Link to= {{ pathname: "/product-details", state: props}}>
+          
+            <img src={`${props.imageUrl}`} className="card-img-top" alt="..." />
+          
+        </Link>
+      
       <div className="card-body">
         <div className="d-flex justify-content-around">
           <p>
